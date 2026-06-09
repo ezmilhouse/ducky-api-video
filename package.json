@@ -1,0 +1,50 @@
+{
+    "name": "lv2_api",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "app": "concurrently --raw --kill-others-on-fail \"npm run app:server\"",
+        "app:build": "./build.sh",
+        "app:server": "NODE_ENV=development VERSION=0.0.0-local TZ=utc node --max-old-space-size=4096 --stack-trace-limit=5 --preserve-symlinks app.js",
+        "config": "node config.js"
+    },
+    "dependencies": {
+        "async": "^3.2.5",
+        "aws-sdk": "^2.1692.0",
+        "axios": "^1.9.0",
+        "bcrypt": "^5.1.1",
+        "connect-redis": "^7.1.1",
+        "connect-timeout": "^1.9.0",
+        "cookie-parser": "^1.4.7",
+        "cors": "^2.8.5",
+        "ejs": "^3.1.9",
+        "express": "^4.18.2",
+        "express-compression": "^1.0.2",
+        "express-fileupload": "^1.4.3",
+        "express-rate-limit": "^7.5.0",
+        "express-session": "^1.18.0",
+        "geoip-lite": "^1.4.10",
+        "hashids": "^2.3.0",
+        "ioredis": "^5.3.2",
+        "ismobilejs": "^1.1.1",
+        "jsonwebtoken": "^9.0.2",
+        "moment": "^2.30.1",
+        "moment-timezone": "^0.5.45",
+        "mongoose": "^5.13.23",
+        "nodemailer": "^6.9.10",
+        "passport": "^0.7.0",
+        "passport-custom": "^1.1.1",
+        "passport-jwt": "^4.0.1",
+        "postmark": "^4.0.5",
+        "request": "^2.88.2",
+        "sass": "^1.77.6",
+        "secure-password": "^4.0.0",
+        "stripe": "^18.5.0",
+        "underscore": "^1.13.6",
+        "uuid": "^9.0.1",
+        "zlib": "^1.0.5"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}
