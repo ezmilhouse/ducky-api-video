@@ -14,6 +14,16 @@ const getClientId = function(req) {
 
 }
 
+const normalizeProjectMeta = function(data) {
+
+    if (!data || typeof data.project_meta !== 'object' || Array.isArray(data.project_meta)) {
+        return {}
+    }
+
+    return data.project_meta
+
+}
+
 const normalizeProject = function(data) {
 
     data = data || {}
@@ -25,15 +35,14 @@ const normalizeProject = function(data) {
     return {
         project_api_root     : data.project_api_root || null,
         project_key          : project_key,
+        project_meta         : normalizeProjectMeta(data),
         project_mode         : data.project_mode || 'connected',
         project_name         : project_name,
         project_name_display : project_name_display,
         project_prefix       : data.project_prefix || null,
         project_root         : data.project_root || null,
         project_type         : data.project_type || 'game',
-        state                : data.state || 'ok',
-        team_id              : data.team_id || null,
-        user_id_created      : data.user_id_created || null
+        state                : data.state || 'ok'
     }
 
 }
@@ -160,6 +169,7 @@ const upsert = function(req, res) {
         data : {
             client_id            : ['is_required'],
             project_key          : ['is_required'],
+            project_meta         : ['is_optional'],
             project_name         : ['is_required'],
             project_name_display : ['is_required'],
             project_type         : ['is_required']
@@ -181,6 +191,7 @@ const upsert = function(req, res) {
             results.data = {
                 client_id            : results.model.client_id,
                 project_key          : results.model.project_key,
+                project_meta         : results.model.project_meta,
                 project_name         : results.model.project_name,
                 project_name_display : results.model.project_name_display,
                 project_type         : results.model.project_type

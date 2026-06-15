@@ -1,0 +1,1 @@
+../ducky_shared/AGENTS.md

@@ -57,12 +57,6 @@ module.exports = {
     server  : server
 }
 
-// LIB
-
-const lib            = {
-    auth : require(path.resolve(__dirname) + '/app/services/auth/lib')
-}
-
 // DB
 
 mongoose.connect(env.mongo.url, {

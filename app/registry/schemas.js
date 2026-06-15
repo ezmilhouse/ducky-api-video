@@ -17,8 +17,5 @@ module.exports = {
     Script   : require('../schemas/script.js'),
     Shotlist : require('../schemas/shotlist.js'),
     Source   : require('../schemas/source.js'),
-    Team     : require('../schemas/team.js'),
-    TeamInvite: require('../schemas/team_invite.js'),
-    User     : require('../schemas/user.js'),
     Voiceover: require('../schemas/voiceover.js')
 }

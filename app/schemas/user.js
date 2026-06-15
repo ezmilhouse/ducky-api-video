@@ -1,1 +1,0 @@
-/Users/marcfuehnen/Workspace/ducky2/ducky_shared/app/schemas/user.js

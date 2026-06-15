@@ -26,13 +26,12 @@ const schema = new Schema({
 
     // IDs
     client_id            : { required : true,  index : true,  type : ObjectId, default : null, ref : 'Client' },
-    team_id              : { required : false, index : true,  type : ObjectId, default : null, ref : 'Team' },
-    user_id_created      : { required : false, index : true,  type : ObjectId, default : null, ref : 'User' },
 
     // Project fields
     project_api_root     : { required : false, index : false, type : String,   default : null },
     project_key          : { required : true,  index : true,  type : String,   default : null, ...transform.project_key },
     project_mode         : { required : true,  index : true,  type : String,   default : defaults.project_mode, enum : defaults.project_mode_list },
+    project_meta         : { required : false, index : false, type : Object,   default : {} },
     project_name         : { required : true,  index : true,  type : String,   default : null, ...transform.project_name },
     project_name_display : { required : true,  index : false, type : String,   default : null },
     project_prefix       : { required : false, index : true,  type : String,   default : null },
